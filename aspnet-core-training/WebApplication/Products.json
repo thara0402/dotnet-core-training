@@ -1,0 +1,17 @@
+[
+  {
+    "ID": "1001",
+    "Name": "MacBook Pro",
+    "Price": "230000"
+  },
+  {
+    "ID": "1002",
+    "Name": "Surface Laptop 3",
+    "Price": "300000"
+  },
+  {
+    "ID": "1003",
+    "Name": "ThinkPad X1 Carbon",
+    "Price": "220000"
+  }
+]

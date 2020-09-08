@@ -1,0 +1,47 @@
+﻿@page
+@model WebApplication.Pages.Baskets.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>バスケットの削除</h2>
+
+<p>本当に削除しますか？</p>
+<div>
+    <h4>商品</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BasketItem.Product.Desc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BasketItem.Product.Desc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BasketItem.Product.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BasketItem.Product.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BasketItem.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BasketItem.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BasketItem.UnitPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BasketItem.UnitPrice)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="BasketItem.BasketItemId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">バスケットに戻る</a>
+    </form>
+</div>
+
+

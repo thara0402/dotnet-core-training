@@ -1,0 +1,44 @@
+﻿@page
+@model WebApplication.Pages.Products.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>商品一覧</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <a asp-page="./Index" asp-page-handler="AddBasket" asp-route-id="@item.ProductId">バスケットへ追加</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ProductId">詳細</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

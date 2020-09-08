@@ -1,0 +1,44 @@
+﻿@page
+@model WebApplication.Pages.Orders.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>注文一覧</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].LastUpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastUpdate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.OrderId">注文明細</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
